@@ -86,7 +86,7 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Responsive_web_design)
 * To apply Materialize styles, you just add classes to your HTML elements. The Materialize CSS files style these classes in complex ways.
 * It has excellent documentation!
 
-Bootstrap comes with a ton of features, including:
+Materialize comes with a ton of features, including:
 
 - [Responsive Grid System](http://materializecss.com/grid.html)
 - CSS library for quick and easy styling
@@ -128,32 +128,7 @@ A content delivery network (CDN) hosts the library/framework and you access it v
 
 ##### Direct Download
 
-Download the actual CSS and JS files and link to them on your local computer - better for offline/local development.
-
-<details><summary>Sample code</summary>
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Bootstrap</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Bootstrap CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- uncomment for Bootstrap's optional javascript components
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  -->
-</head>
-<body>
-	<!--html here-->
-</body>
-</html>
-```
-
-</details>
+Download the actual CSS and JS files and link to them on your local computer - better for offline/local development. Just hit [the download button on their site](http://materializecss.com/getting-started.html). You'll need to include the JS and CSS files in your project and properly reference them in `<link>` tags in `index.html`.
 
 ## Responsive Grid System
 
@@ -188,7 +163,7 @@ We can also create the typical two column layout (main content area + sidebar):
 
 
 #### Start with a container
-To ensure all your Bootstrap styles behave properly, always put your content inside an element with a class "container" (usually `<div class="container">`). This will center your content and leave a small margin on the sides of the page.
+To ensure all your Materialize styles behave properly, always put your content inside an element with a class "container" (usually `<div class="container">`). This will center your content and leave a small margin on the sides of the page.
 
 #### Add a row
 
@@ -211,7 +186,7 @@ To use the grid system we must put a row in our container:
 
 * Pick a portion of the `12` columns that will determine how much of the row an element will take up.
 
-* You then use the above choices to determine the exact class you will add to an element in the row (bootstrap has them all built in).
+* You then use the above choices to determine the exact class you will add to an element in the row (Materialize has them all built in).
 
 For example the class: `col l3` will take up `3/12` of the space at `>992px`. Feel free to add more classes to the same element to change how it will behave at other screen sizes. Let's checkout some more examples...
 
@@ -250,7 +225,7 @@ What will this code do?
   * `col s12`
 
 
-1. Using the bootstrap grid, make a grid that is 1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (l).
+1. Using the Materialize grid, make a grid that is 1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (l).
 
 <details><summary>Sample code</summary>
 
@@ -298,7 +273,7 @@ Here is an example of nesting columns (putting one row inside another)
 ```
 
 ## Typography
-For a complete list: [Bootstrap Typography classes](http://getbootstrap.com/css/#type)
+For a complete list: [Materialize Typography classes](http://materializecss.com/typography.html)
 
 To align text, use these classes.  
 
@@ -356,29 +331,27 @@ To style buttons, you will need to provide multiple classes.
 ```  
 
 ### Images
-Bootstrap helps you format images using `class="img-rounded"` (rounds the corners), `class="img-circle"` (makes the image a circle) and `class="img-thumbnail"` (adds a border). You can also add a `class="img-responsive"` to your image to make it scale well when the screen size changes (this sets its max-width to 100% of its parent element and the height to auto for maintaining aspect)
+Materialize helps you format [images](http://materializecss.com/media-css.html) using `class="responsive-img"` to make it scale well when the screen size changes (this sets its max-width to 100% of its parent element and the height to auto for maintaining aspect). You can also use `class="circle responsive-img"` to make the responsive image into a circle.
 
 ### Forms
-Bootstrap is also very helpful when you need to style your forms. All textual `<input>`, `<textarea>`, and `<select>` elements with `class="form-control"` are set to width: 100% by default. Wrap labels and their associated controls (inputs) in `class="form-group"` for optimum spacing.
+Materialize is also very helpful when you need to [style your forms](http://materializecss.com/forms.html). You must have a `.input-field` div wrapping your input and label in order for it to be styled.
 
 ### Javascript plug-ins
-Bootstrap allows you to incorporate interactive behavior into your page with Javascript plug-ins.  While you would ultimately have to write some JS in order for these components to provide actual functionality within the application, you don't have to write JS if you're simply mocking up a UI.
+Materialize allows you to incorporate interactive behavior into your page with JavaScript plug-ins.  While you would ultimately have to write some JS in order for these components to provide actual functionality within the application, you don't have to write JS if you're simply mocking up a UI.
 
 Some examples:
 
-- [Responsive Nav bars](http://getbootstrap.com/components/#navbar)
-- [Dropdowns](http://getbootstrap.com/javascript/#dropdowns)
-- [Popovers](http://getbootstrap.com/javascript/#popovers)
-- [Modals](http://getbootstrap.com/javascript/#modals)
-- [Carousels](http://getbootstrap.com/javascript/#carousel)
+- [Paralax effects](http://materializecss.com/parallax.html)
+- [Dropdowns](http://materializecss.com/dropdown.html)
+- [Modals](http://materializecss.com/modals.html)
+- [Carousels](http://materializecss.com/carousel.html)
 
 
 ## Closing Thoughts
 
-Bootstrap demonstrates good practices in terms of exemplifying class-based CSS and introducing the concept of a grid-system. It is useful for most projects where style is somewhat important but not the central to the product.
+Materialize demonstrates good practices in terms of exemplifying class-based CSS and introducing the concept of a grid-system. It is useful for most projects where style is somewhat important but not the central to the product.
 
-Be aware that critical users of the web know what bootstrap looks like; it’s all over the place! If you’re making a serious project or portfolio work, add some of your own stylings to stand out!
-
+Be aware that critical users of the web know what Materialize and other styling frameworks look like; Bootstrap is especially all over the place! If you’re making a serious project or portfolio work, add some of your own styling to stand out!
 
 ## Additional Resources
 - [Bootstrap](http://getbootstrap.com/) - a CSS-library, similar to Materialize
