@@ -162,7 +162,7 @@ Download the actual CSS and JS files and link to them on your local computer - b
 
 **Note:** There's an error in the image above. Can you find it? Maybe after you have a bit more background on the 12 column layout system.
 
-Bootstrap's grid system is based on the idea that a page layout for any given screen size is represented with 12 fluid **columns**.  Columns are always horizontally contained in **rows**, which in turn are contained inside of a larger `container` (container > row > column). But why 12?
+The Materialize grid system is based on the idea that a page layout for any given screen size is represented with 12 fluid **columns**.  Columns are always horizontally contained in **rows**, which in turn are contained inside of a larger `container` (container > row > column). But why 12?
 
 #### 12 is the best number
 
@@ -188,7 +188,7 @@ We can also create the typical two column layout (main content area + sidebar):
 
 
 #### Start with a container
-To ensure all your Bootstrap styles behave properly, always put your content inside an element with a class "container" (usually `<div class="container">`). This will center your content and leave a small margin on the sides of the page. If you would like to use the full width of the screen (no margin) use `class="container-fluid"`
+To ensure all your Bootstrap styles behave properly, always put your content inside an element with a class "container" (usually `<div class="container">`). This will center your content and leave a small margin on the sides of the page.
 
 #### Add a row
 
@@ -200,31 +200,29 @@ To use the grid system we must put a row in our container:
 
 #### Specify your columns
 
-* Columns are written in the following format as a class: `col-(breakpoint)-(width)`
-* For example: `col-sm-4`
+* Columns are written using at least two CSS classes. Use the `col` class to make an element into a column and then use another class to specify the screen size and number of columns you want to take up. For example, `col s4`, would be an element that takes up 4 columns or 1/3 of the width of its surrounding container.
 
  Then select what screen size we'll want it to display on:
-  - `col-xs` < 768px (e.g. smartphones)
-  - `col-sm` ≥ 992px (e.g. tablets)
-  - `col-md` ≥ 1200px (e.g. laptops, desktops)
-  - `col-lg` ≥ 1200px (e.g. large desktops, smart TVs)
+  - `s` ≤ 600px (e.g. mobile devices and smartphones)
+  - `m` ≤ 992px (e.g. tablets)
+  - `l` > 992px (e.g. laptops, desktops)
 
 * At screen sizes smaller than the specified screen sizes, the columns will default to filling the width of the screen.
 
-* Pick a fraction of `12` that will determine how much of the row it will take up.
+* Pick a portion of the `12` columns that will determine how much of the row an element will take up.
 
 * You then use the above choices to determine the exact class you will add to an element in the row (bootstrap has them all built in).
 
-For example the class: `col-lg-3` will take up `3/12` of the space at `1200px`. Feel free to add more classes to the same element to change how it will behave at other screen sizes. Let's checkout some more examples...
+For example the class: `col l3` will take up `3/12` of the space at `>992px`. Feel free to add more classes to the same element to change how it will behave at other screen sizes. Let's checkout some more examples...
 
 Here's an example of a two-column layout that spans the width of the page.  Notice that the widths of the two columns add up to 12.  The column content of any row must always be ≤12.
 
 ```html
  <div class="row">
-   <div class="col-md-6">
+   <div class="col m6">
      <p>I'm a medium-sized column</p>
     </div>
-   <div class="col-md-6">
+   <div class="col m6">
      <p>Me too! We have SO much in common</p>
    </div>
  </div>
@@ -234,10 +232,10 @@ What will this code do?
 
 ```html
  <div class="row">
-   <div class="col-sm-12 col-md-6">
+   <div class="col s12 col m6">
      <p>I take up the entire space when the screen is small, but share it when there's more room.</p>
     </div>
-   <div class="col-sm-12 col-md-6">
+   <div class="col s12 col m6">
      <p>Samesies...</p>
    </div>
  </div>
@@ -246,22 +244,22 @@ What will this code do?
 ### Challenge: Grid it
 1. How much of the page would elements with these classes take up?
 
-  * `col-md-2`
-  * `col-sm-1`
-  * `col-lg-8`
-  * `col-xs-12`
+  * `col m2`
+  * `col s1`
+  * `col l8`
+  * `col s12`
 
 
-1. Using the bootstrap grid, make a grid that is 3 Columns on Tablet (sm), Laptop (md), and Desktop (lg), 1 Column on Mobile(xs).
+1. Using the bootstrap grid, make a grid that is 1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (l).
 
 <details><summary>Sample code</summary>
 
 ```html
 <div class="row">
-  <h3 class='text-center'>3 Columns on Tablet, Laptop, and Desktop, 1 Column on Mobile</h3>
-  <div class="col-sm-4 col-xs-12">Yao</div>
-  <div class="col-sm-4 col-xs-12">Hey</div>
-  <div class="col-sm-4 col-xs-12">Ola</div>
+  <h3 class='text-center'>1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (lg) Mobile</h3>
+  <div class="col s12 m4 l3">Yao</div>
+  <div class="col s12 m4 l3">Hey</div>
+  <div class="col s12 m4 l3">Ola</div>
 </div>
 ```
 
@@ -269,14 +267,14 @@ What will this code do?
 
 
 
-For other examples, check out the [Bootstrap docs](http://getbootstrap.com/css/#grid)  
+For other examples, check out the [Materialize docs](http://materializecss.com/grid.html)  
 
 ## Offsets & Nesting
 You can also offset and nest your columns. When you offset a column, you add a column of whitespace and push the column to the right.  Example:
 
 ```html
  <div class="row">
-   <div class="col-md-3 col-md-offset-3">
+   <div class="col m3 offset-m3">
      <p>This column occupies 1/4 of the page width and is moved to the right by 1/4 of the page width</p>
    </div>
  </div>
@@ -285,13 +283,13 @@ Here is an example of nesting columns (putting one row inside another)
 
 ```html
  <div class="row">
-   <div class="col-md-6">
+   <div class="col m6">
      Level 1: Column takes 1/2 the width of the page
      <div class="row">
-       <div class="col-md-4">
+       <div class="col m4">
          Level 2: This column takes 1/3 the width of its parent column
        </div>
-       <div class="col-md-8">
+       <div class="col m8">
          Level 2: This column takes 2/3 the width of its parent column
        </div>
      </div>
@@ -305,45 +303,57 @@ For a complete list: [Bootstrap Typography classes](http://getbootstrap.com/css/
 To align text, use these classes.  
 
 ```html
- <p class="text-left">Left aligned text.</p>
- <p class="text-center">Center aligned text.</p>
- <p class="text-right">Right aligned text.</p>
- <p class="text-justify">Justified text.</p>
- <p class="text-nowrap">No wrap text.</p>
+<div>
+  <h5 class="left-align">This should be left aligned</h5>
+</div>
+<div>
+  <h5 class="right-align">This should be right aligned</h5>
+</div>
+<div>
+  <h5 class="center-align">This should be center aligned</h5>
+</div>
+<!-- Vertical align -->
+<div class="valign-wrapper">
+  <h5 class="valign">This should be vertically aligned</h5>
+</div>
 ```
 More useful typography classes...
 
 ```html
- <p class="lead">This text will stand out in a paragraph</p>
- <small>This line of text is meant to be treated as fine print.</small>
- <p class="text-lowercase">Lowercased text.</p>
- <p class="text-uppercase">Uppercased text.</p>
- <p class="text-capitalize">Capitalized text.</p>
+	<h4 class="truncate">This is an extremely long title that will be truncated</h4>
+	<p class="flow-text">I am Flow Text that will actively resize as the page changes</p>
 ```
 
 #### Icons
-Bootstrap comes with a set of icons that can be included in your page using the `<i></i>` tag. Check out these icons [here](http://getbootstrap.com/components/#glyphicons)
-
-#### Buttons
-Bootstrap provides a wide selection of button sizes and colors.  Button classes can be applied not just to `<button>` elements, but also `<a>` and `<input>` elements
-
-Sometimes you need to provide multiple classes to an element in order for Bootstrap to style it.  The button classes are an example of this:
+Materialize comes with a set of icons that can be included in your page. Check out these icons [here](http://materializecss.com/icons.html). To use them, you need to include them in the `<head>` of your `index.html`:
 
 ```html
- <!-- Standard button -->
- <button type="button" class="btn btn-default">Default</button>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
 
- <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
- <button type="button" class="btn btn-primary">Primary</button>
+Then you can use `<i>` tags with a class of `material-icons` to wrap the name of the icon. Additional classes can size the icons. For example:
 
- <!-- Contextual button for informational alert messages -->
- <button type="button" class="btn btn-info">Info</button>
+```html
+<!-- a plus icon -->
+<i class="material-icons">add</i>
+<!-- a large volume up icon -->
+<i class="large material-icons">volume_up</i>
+<!-- a tiny volume up icon -->
+<i class="tiny material-icons">volume_up</i>
+```
 
- <!-- Indicates caution should be taken with this action -->
- <button type="button" class="btn btn-warning">Warning</button>
+
+#### Buttons
+Materialize provides [a wide selection of button](http://materializecss.com/buttons.html) sizes and colors.  Button classes can be applied not just to `<button>` elements, but also `<a>` and `<input>` elements
+
+To style buttons, you will need to provide multiple classes.
+
+```html
+ <!-- Standard colored button with effects/animations -->
+ <a class="waves-effect waves-light btn">button</a>
+ <!-- A large, red, floating button -->
+ <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
 ```  
-... and so on.  See the [docs](http://getbootstrap.com/css/#buttons) for a comprehensive list of options.  Note you can add a third class denoting size to any of the above: `.btn-lg`, `.btn-sm`, `.btn-xs`
-
 
 ### Images
 Bootstrap helps you format images using `class="img-rounded"` (rounds the corners), `class="img-circle"` (makes the image a circle) and `class="img-thumbnail"` (adds a border). You can also add a `class="img-responsive"` to your image to make it scale well when the screen size changes (this sets its max-width to 100% of its parent element and the height to auto for maintaining aspect)
