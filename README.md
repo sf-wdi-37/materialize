@@ -31,7 +31,7 @@ Materialize is a **library of CSS classes** that helps make any old site look ni
 - Write custom HTML & CSS
 - Include external stylesheets
 
-##What is Class-based CSS?
+## What is Class-based CSS?
 
 Create modular classes that *encapsulate* a certain behavior and name them semantically.
 
@@ -231,7 +231,7 @@ What will this code do?
 
 ```html
 <div class="row">
-  <h3 class='text-center'>1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (lg) Mobile</h3>
+  <h3 class="text-center">1 column on a phone (s), 3 columns on a tablet (m), and 4 columns on a desktop (lg) Mobile</h3>
   <div class="col s12 m4 l3">Yao</div>
   <div class="col s12 m4 l3">Hey</div>
   <div class="col s12 m4 l3">Ola</div>
@@ -292,6 +292,9 @@ To align text, use these classes.
   <h5 class="valign">This should be vertically aligned</h5>
 </div>
 ```
+
+Note: If you want to horizontally center a block of HTML rather than just text, use the`center-block` materialize class.
+
 More useful typography classes...
 
 ```html
