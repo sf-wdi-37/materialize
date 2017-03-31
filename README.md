@@ -163,9 +163,9 @@ The Materialize grid system is based on the idea that a page layout for any give
 
 
 We can also create the typical two column layout (main content area + sidebar):
-
-    8 + 4                                           = 12
-    9 + 3                                           = 12
+ 
+                  8             +        4          = 12
+                    9              +       3        = 12
 
 
 
